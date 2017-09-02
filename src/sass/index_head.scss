@@ -1,0 +1,238 @@
+@import 'var';
+
+.index_head{
+	background-color: #f3f3f3;
+	.topbox{
+		box-shadow: 0 1px 1px #fff;
+   		border-bottom: solid 1px #ccc;	
+		.top{
+			height:30px;
+			width:$width;
+			margin:0 auto;
+			.smallbox{
+				float:left;
+					a{
+						margin-right:20px;
+						color: #999;
+						font-size:12px;
+						line-height:30px;
+						&:hover{
+							color:#e92323;
+							text-decoration: underline;
+						}
+					}
+				
+			}
+			p{
+				@extend .smallbox;
+				float:right;
+				a{
+					border-right: 1px solid #d2d2d2;
+					margin:0;
+					padding:0 10px;
+				}
+			}
+
+		}
+	}
+	.search{
+
+		width:$width;
+		height:80px;
+		margin:0 auto;
+		display: flex;
+   		justify-content: space-between;
+			.imgbox{
+				display: inline-block;
+				width:150px;
+				height:80px;
+				background:url('./img/logo.png') 0px 10px no-repeat;
+				
+			}
+			em{
+				margin-top:20px;
+				display: inline-block;
+				width:151px;
+				height:50px;
+				background:url('./img/logo.png') 20px -70px no-repeat;
+				border-left:1px solid #d3d3d3;
+			}
+			.searchbox{
+				margin-top:15px;
+				width:390px;
+				height:63px;
+				form{
+					height: 37px;
+					background:url('../img/search.png') no-repeat;
+					input{
+						float:left;
+						width: 287px;
+					    height: 25px;
+						background-color: transparent;
+					    border: 2px solid transparent;
+					    padding-right: 5px;
+					    padding-left: 30px;
+					    padding: 4px 6px;
+					    border-radius: 30px;
+					    margin-left:5px;
+					    outline: none;
+					}
+					button{
+						float:left;
+						cursor:pointer;
+						border: 1px solid transparent;
+					    background: none;
+					    width: 66px;
+					    height:37px;
+					}
+				}
+				p{
+					margin-top:5px;
+					font-size: 12px;
+					a{
+						color: #333;
+    					margin-right: 5px;
+    					line-height:20px;
+    					&:nth-child(2){
+    						color:#e92323;;
+    					}
+					}
+				}
+
+				
+			}
+			i{
+				display: inline-block;
+				width:330px;
+				height:80px;
+				background:url('./img/logo.png') 0 -412px no-repeat
+			}
+		
+		
+	}
+	.navbox{
+		height:49px;
+		background:url('./img/menu_bg.gif');
+		.nav{
+			position:relative;
+			width:$width;
+			margin:0 auto;
+			ul{
+				li{
+					padding:0 15px;
+					margin-top:10px;
+					border-left: 1px solid #b90c00;
+   					border-right: 1px solid #f93f32;
+					float:left;
+					a{
+						text-align: center;
+						font-weight: bold;
+						display: inline-block;
+						color:#fff;
+						font-size:16px;
+						line-height:29px;
+						width:105px;
+						&:hover{
+							background:#fff;
+							color: #de1d0e;
+							border-left:0;
+							border-radius: 15px;
+							box-shadow: inset rgba(0,0,0,.6) 0px 1px 2px;
+						}
+					}
+					&:nth-child(1){
+						position:relative;
+						border:0;
+						a{
+							margin-right: 80px;		
+							margin-left: 30px;
+							&:hover{
+								color: #eee;
+								background:none;
+								box-shadow:none;
+								border-radius:none;
+							}
+						}
+						.list{
+							z-index: 99;
+							overflow: hidden;
+							top:39px;
+							left:0;
+							position: absolute;
+							width:210px;
+							height:419px;
+							
+							ul{
+								position:absolute;
+								width:206px;
+								height:415px;
+								border:2px solid #e12213;
+								background: #f5f0f0;
+								border-top:0;
+								li{
+									display: block;
+									border:0;
+									h5{
+										height: 30px;
+    									line-height: 30px;
+    									padding-left: 40px;
+    									font-size: 14px;
+    									background:url('./img/duonaIcon.png') no-repeat;
+									}
+									div{
+										padding-left: 40px;
+   										padding-right: 5px;
+										
+										b{
+											cursor: pointer;
+											font-weight:500;
+											color:#333;
+											font-size: 12px;
+											line-height:20px;
+											&:hover{
+												color:rgb(155,5,5);
+												text-decoration: underline;
+											}
+										}
+									}
+									&:nth-child(1) h5{
+										background-position: 10px -205px;
+									}
+									&:nth-child(2) h5{
+										background-position: 13px -250px;
+									}
+									&:nth-child(3) h5{
+										background-position: 4px -300px;
+									}
+									&:nth-child(4) h5{
+										background-position: 6px -342px;
+									}
+								}
+							}
+						}
+				
+					}
+					&:nth-child(2) {
+						border-left:0;
+					}
+
+					
+					&:last-child{
+						border-right:0;
+					}
+				}
+			}
+			em{
+				z-index:99;
+				display: block;
+				width:110px;
+				height:160px;
+				background:url('./img/logo.png') no-repeat 0 -190px;
+				position:absolute;
+				top:-66px;
+				right:17px;
+			}
+		}
+	}
+	
+}

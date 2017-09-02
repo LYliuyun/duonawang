@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录——多拿网</title>
+	<link rel="stylesheet" href="../css/head.css">
+	<link rel="stylesheet" href="../css/foot.css">
+	<link rel="stylesheet" href="../css/singnIn.css">
+	<script src="../lib/require.js" data-main="../js/singnIn"></script>
+</head>
+<body>
+	<!-- 头部 -->
+	<div id="head"></div>
+	<div class="content">
+		<div class="contentbox">
+			<a href="../index.html"><img src="../img/signInLogo.png"></a>
+			<div class="bigbox">
+				<img src="../img/singnInImg.png">
+				<form>
+					<div class="houzi"></div>
+					<h2>会员登录</h2>
+					<div class="namebox">
+						<label for="name">账号：</label>
+						<div>
+							<input type="text" id="name" placeholder="填写邮箱/手机号"><br/>
+							<span>请填写邮箱/手机</span>
+						</div>
+					</div>
+					<div class="pasbox">
+						<label for="password">密码：</label>
+						<div>
+							<input type="password" id="password" placeholder="密码"><br/>
+							<span>请输入6-20位的密码</span>
+						</div>
+					</div>
+					<div class="yzbox">
+						<label for="yz">验证码：</label>
+						<div>
+							<input type="text" id="code_input" placeholder="填写验证码">
+							<div id="v_container" style="width: 90px;height: 30px;"></div>
+							<br/>
+							<span>请输入验证码</span>
+						</div>
+					</div>
+					<div class="btnbox">
+						<label for="checkbox">
+							<input type="checkbox" id="checkbox" checked>记住我的账号
+							<a href="./register.html">免费注册</a>
+						</label>
+						<button>登&nbsp;&nbsp;录</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- 尾部 -->
+	<div id="foot"></div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+body, ul, h2, p, h6, h5, ol, h3 { margin: 0; padding: 0; }
+
+a { text-decoration: none; }
+
+ul li { list-style: none; }
+
+.carousel_box { width: 1200px; margin: 0 auto; text-align: right; }
+
+.carousel_box .carousel { position: relative; right: -220px; top: 0; width: 996px; height: 415px; overflow: hidden; }
+
+.carousel_box .carousel ul { position: absolute; left: 0; top: 0; }
+
+.carousel_box .carousel ul li { float: left; }
+
+.carousel_box .carousel ul li a img { border: 0; }
+
+.carousel_box .carousel #prev, .carousel_box .carousel #next { cursor: pointer; color: #ffffff; opacity: 0.5; position: absolute; left: 15px; top: 50%; bottom: 50%; transform: translate(0, -50%); width: 40px; height: 40px; margin-top: -20px; font-size: 60px; font-weight: 100; line-height: 30px; text-align: center; background: #222222; border: 3px solid #ffffff; -moz-border-radius: 23px; border-radius: 23px; filter: alpha(opacity=50); }
+
+.carousel_box .carousel #prev:hover, .carousel_box .carousel #next:hover { opacity: 0.9; color: #ffffff; }
+
+.carousel_box .carousel #next { left: 94%; }
+
+.content { width: 1200px; margin: 0 auto; }
+
+.content .hotbox .hot { width: 870px; height: 330px; }
+
+.content .hotbox .hot h3 { margin-top: 10px; font-weight: 100; font-size: 20px; line-height: 40px; width: 870px; height: 45px; }
+
+.content .hotbox .hot h3 strong { color: #e92323; font-weight: 100; margin-right: 10px; float: left; }
+
+.content .hotbox .hot h3 span { font-size: 14px; font-weight: normal; float: left; }
+
+.content .hotbox .hot h3 a { margin-right: 30px; color: #e92323; font-size: 14px; float: right; }
+
+.content .hotbox .hot ul { width: 870px; height: 225px; }
+
+.content .hotbox .hot ul li { text-align: center; border: 1px solid #c5c5c5; border-right: 0; width: 168px; height: 253px; float: left; }
+
+.content .hotbox .hot ul li:last-child { border-right: 1px solid #c5c5c5; }
+
+.content .hotbox .hot ul li span { margin: 10px 0 10px 10px; text-align: center; line-height: 20px; width: 23px; display: block; height: 20px; color: #FFF; background: url("./img/duonaIcon.png") no-repeat 0 -689px; }
+
+.content .hotbox .hot ul li a { margin: 3px; display: block; border: 1px solid #c5c5c5; }
+
+.content .hotbox .hot ul li a img { padding-top: 5px; width: 152px; height: 100px; border: 0; }
+
+.content .hotbox .hot ul li .title { font-size: 14px; margin: 10px 0 0 6px; display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 150px; height: 35px; line-height: 35px; background: #8c8c8c; color: #fff; }
+
+.content .hotbox .hot ul li .title:hover { color: #dbb10f; text-decoration: underline; }
+
+.content .hotbox .hot ul li b { display: block; font-weight: 100; margin-top: 20px; font-size: 12px; }
+
+.content .hotbox .hot ul li b em { color: #e92323; }
+
+.content .one { overflow: hidden !important; width: 1200px; margin: 0 auto; margin-bottom: 30px; }
+
+.content .one h3 { margin: 0 0 10px 0; overflow: hidden; width: 100%; height: 30px; line-height: 30px; border-bottom: 6px solid #dbb10f; }
+
+.content .one h3 a { float: right; font-size: 14px; }
+
+.content .one div ul li { overflow: hidden; font-size: 14px; border: solid 1px #dadada; border-radius: 6px/7px; background-color: #f5f5f5; margin-left: 26px; float: left; width: 208px; height: 283px; }
+
+.content .one div ul li:first-child { margin: 0; }
+
+.content .one div ul li:hover { background: #d7dce0; }
+
+.content .one div ul li strong { font-size: 12px; display: block; color: #686868; font-weight: 100; text-align: right; margin-right: 10px; line-height: 30px; }
+
+.content .one div ul li a img { width: 330px; height: auto; border: 0; }
+
+.content .one div ul li .title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; margin: 0 10px; margin-top: 6px; color: #686868; border-bottom: 1px solid #d7d7d7; }
+
+.content .one div ul li .title:hover { color: #9b0505; text-decoration: underline; }
+
+.content .one div ul li p { margin-top: 5px; }
+
+.content .one div ul li p span { margin-left: 10px; }
+
+.content .one div ul li p span b { margin: 0 5px; color: #e92323; font-size: 24px; font-weight: bold; }
+
+.content .one div ul li p em { margin-top: 5px; margin-right: 10px; float: right; border-radius: 5px; background-color: #eb7171; padding: 3px 5px; font-size: 12px; color: #FFF; }

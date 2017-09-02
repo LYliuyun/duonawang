@@ -1,0 +1,87 @@
+body, ul, h2, p, h6, h5, ol, h3 { margin: 0; padding: 0; }
+
+a { text-decoration: none; }
+
+ul li { list-style: none; }
+
+.index_head { background-color: #f3f3f3; }
+
+.index_head .topbox { box-shadow: 0 1px 1px #fff; border-bottom: solid 1px #ccc; }
+
+.index_head .topbox .top { height: 30px; width: 1200px; margin: 0 auto; }
+
+.index_head .topbox .top .smallbox, .index_head .topbox .top p { float: left; }
+
+.index_head .topbox .top .smallbox a, .index_head .topbox .top p a { margin-right: 20px; color: #999; font-size: 12px; line-height: 30px; }
+
+.index_head .topbox .top .smallbox a:hover, .index_head .topbox .top p a:hover { color: #e92323; text-decoration: underline; }
+
+.index_head .topbox .top p { float: right; }
+
+.index_head .topbox .top p a { border-right: 1px solid #d2d2d2; margin: 0; padding: 0 10px; }
+
+.index_head .search { width: 1200px; height: 80px; margin: 0 auto; display: flex; justify-content: space-between; }
+
+.index_head .search .imgbox { display: inline-block; width: 150px; height: 80px; background: url("./img/logo.png") 0px 10px no-repeat; }
+
+.index_head .search em { margin-top: 20px; display: inline-block; width: 151px; height: 50px; background: url("./img/logo.png") 20px -70px no-repeat; border-left: 1px solid #d3d3d3; }
+
+.index_head .search .searchbox { margin-top: 15px; width: 390px; height: 63px; }
+
+.index_head .search .searchbox form { height: 37px; background: url("../img/search.png") no-repeat; }
+
+.index_head .search .searchbox form input { float: left; width: 287px; height: 25px; background-color: transparent; border: 2px solid transparent; padding-right: 5px; padding-left: 30px; padding: 4px 6px; border-radius: 30px; margin-left: 5px; outline: none; }
+
+.index_head .search .searchbox form button { float: left; cursor: pointer; border: 1px solid transparent; background: none; width: 66px; height: 37px; }
+
+.index_head .search .searchbox p { margin-top: 5px; font-size: 12px; }
+
+.index_head .search .searchbox p a { color: #333; margin-right: 5px; line-height: 20px; }
+
+.index_head .search .searchbox p a:nth-child(2) { color: #e92323; }
+
+.index_head .search i { display: inline-block; width: 330px; height: 80px; background: url("./img/logo.png") 0 -412px no-repeat; }
+
+.index_head .navbox { height: 49px; background: url("./img/menu_bg.gif"); }
+
+.index_head .navbox .nav { position: relative; width: 1200px; margin: 0 auto; }
+
+.index_head .navbox .nav ul li { padding: 0 15px; margin-top: 10px; border-left: 1px solid #b90c00; border-right: 1px solid #f93f32; float: left; }
+
+.index_head .navbox .nav ul li a { text-align: center; font-weight: bold; display: inline-block; color: #fff; font-size: 16px; line-height: 29px; width: 105px; }
+
+.index_head .navbox .nav ul li a:hover { background: #fff; color: #de1d0e; border-left: 0; border-radius: 15px; box-shadow: inset rgba(0, 0, 0, 0.6) 0px 1px 2px; }
+
+.index_head .navbox .nav ul li:nth-child(1) { position: relative; border: 0; }
+
+.index_head .navbox .nav ul li:nth-child(1) a { margin-right: 80px; margin-left: 30px; }
+
+.index_head .navbox .nav ul li:nth-child(1) a:hover { color: #eee; background: none; box-shadow: none; border-radius: none; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list { z-index: 99; overflow: hidden; top: 39px; left: 0; position: absolute; width: 210px; height: 419px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul { position: absolute; width: 206px; height: 415px; border: 2px solid #e12213; background: #f5f0f0; border-top: 0; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li { display: block; border: 0; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li h5 { height: 30px; line-height: 30px; padding-left: 40px; font-size: 14px; background: url("./img/duonaIcon.png") no-repeat; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li div { padding-left: 40px; padding-right: 5px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li div b { cursor: pointer; font-weight: 500; color: #333; font-size: 12px; line-height: 20px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li div b:hover { color: #9b0505; text-decoration: underline; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li:nth-child(1) h5 { background-position: 10px -205px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li:nth-child(2) h5 { background-position: 13px -250px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li:nth-child(3) h5 { background-position: 4px -300px; }
+
+.index_head .navbox .nav ul li:nth-child(1) .list ul li:nth-child(4) h5 { background-position: 6px -342px; }
+
+.index_head .navbox .nav ul li:nth-child(2) { border-left: 0; }
+
+.index_head .navbox .nav ul li:last-child { border-right: 0; }
+
+.index_head .navbox .nav em { z-index: 99; display: block; width: 110px; height: 160px; background: url("./img/logo.png") no-repeat 0 -190px; position: absolute; top: -66px; right: 17px; }

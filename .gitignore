@@ -1,0 +1,8 @@
+﻿
+
+#过滤文件夹
+doc/
+node_modules/
+
+#过滤压缩包
+*.zip

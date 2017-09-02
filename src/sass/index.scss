@@ -1,0 +1,254 @@
+@import 'var';
+
+.carousel_box{
+	width:$width;
+	margin:0 auto;
+	text-align:right;
+	.carousel{
+		position: relative;
+		right:-220px;
+		top:0;
+		width:996px;
+		height:415px;
+		overflow: hidden;
+		ul{
+			position:absolute;
+			left:0;
+			top:0;
+			li{
+				float:left;
+				a{
+					img{
+						border:0;
+					}
+				}
+			}
+		}
+		#prev{
+			cursor:pointer;
+			color: #ffffff;
+			opacity: 0.5;
+			position: absolute;
+		    left:15px;
+		    top:50%;
+		    bottom:50%;
+			transform:translate(0,-50%);
+		    width: 40px;
+		    height: 40px;
+		    margin-top: -20px;
+		    font-size: 60px;
+		    font-weight: 100;
+		    line-height: 30px;
+		    text-align: center;
+		    background: #222222;
+		    border: 3px solid #ffffff;
+		    -moz-border-radius: 23px;
+		    border-radius: 23px;
+		    filter: alpha(opacity=50);
+		    &:hover{
+		    	opacity: 0.9;
+		    	color: #ffffff;
+
+		    }
+		}
+		#next{
+			@extend #prev;
+			left:94%;
+		}
+	}
+}
+
+.content{
+	width:$width;
+	margin:0 auto;
+	.hotbox{
+		.hot{
+			width:870px;
+			height:330px;
+			h3{   
+				margin-top:10px;
+				font-weight:100; 
+				font-size: 20px;
+    			line-height: 40px;
+				width:870px;
+				height:45px;
+				strong{
+					color:#e92323;
+					font-weight:100; 
+					margin-right: 10px;
+					float:left;
+				}
+				span{
+					font-size: 14px;
+    				font-weight: normal;
+					float:left;
+				}
+				a{
+					margin-right: 30px;
+					color:#e92323;
+					font-size: 14px;
+					float:right;
+				}
+			}
+			ul{
+				width:870px;
+				height:225px;
+				li{
+					text-align: center;
+					border: 1px solid #c5c5c5;
+					border-right:0;
+					width:168px;
+					height:253px;
+					float:left;
+					&:last-child{
+						border-right:1px solid #c5c5c5;
+					}
+					span{
+						margin:10px 0 10px 10px;
+						text-align: center;
+						line-height: 20px;
+						width:23px;
+						display: block;
+						height:20px;
+						color: #FFF;
+						background:url('./img/duonaIcon.png') no-repeat 0 -689px;
+					}
+					a{
+						margin:3px;
+						display: block;
+						border:1px solid #c5c5c5;
+						img{
+							padding-top:5px;
+							width:152px;
+							height:100px;
+							border:0;
+						}
+					}
+					.title{
+						font-size:14px;
+						margin:10px 0 0 6px;
+						display: block;
+						overflow: hidden;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
+					    width: 150px;
+					    height: 35px;
+					    line-height: 35px;
+					    background: #8c8c8c;
+					    color: #fff;
+					    &:hover{
+					    	color:#dbb10f;
+					    	text-decoration: underline;
+					    }
+					}
+					b{
+						display: block;
+						font-weight:100;
+						margin-top: 20px;
+						font-size:12px;
+						em{
+   						 	color: #e92323;
+						}
+					}
+
+				}
+			}
+		}
+
+	}
+	.one{
+		overflow: hidden !important;
+		width:$width;
+		margin:0 auto;
+		margin-bottom:30px;
+		h3{
+			margin:0 0 10px 0;
+			overflow: hidden;
+			width:100%;
+			height: 30px;
+    		line-height: 30px;
+    		border-bottom: 6px solid #dbb10f;
+    		a{
+    			float:right;
+    			font-size:14px;
+
+    		}
+		}
+		div{
+			ul{
+
+				li{
+					overflow: hidden;
+					font-size:14px;
+					border: solid 1px #dadada;
+					border-radius: 6px/7px;
+					background-color: #f5f5f5;
+					margin-left:26px;
+					float:left;
+					width:208px;
+					height:283px;
+					&:first-child{
+						margin:0;
+					}
+					&:hover{
+						background: #d7dce0;
+					}
+					strong{
+						font-size: 12px;
+						display: block;
+						color:#686868;
+						font-weight:100;
+						text-align:right;
+						margin-right:10px;
+						line-height:30px;
+					}
+					a{
+						img{
+							width:330px;
+							height:auto;
+							border:0;
+						}
+					}
+					.title{
+						display: block;
+						overflow: hidden;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
+					    font-weight:600;
+					    margin:0 10px;
+					    margin-top:6px;
+					    color:#686868;
+					    border-bottom: 1px solid #d7d7d7;
+					    &:hover{
+					    	color:rgb(155,5,5);
+					    	text-decoration: underline;
+					    }
+					}
+					p{
+						margin-top:5px;
+						span{
+
+							margin-left:10px;
+							b{	
+							margin:0 5px;							
+								color:#e92323;
+								font-size:24px;
+								font-weight: bold;
+							}
+						}
+						em{
+							margin-top:5px;
+							margin-right:10px;
+							float:right;
+							border-radius: 5px;
+						    background-color: #eb7171;
+						    padding: 3px 5px;
+						    font-size: 12px;
+						    color: #FFF;
+						}
+					}
+				}
+			}
+		}
+	}
+}

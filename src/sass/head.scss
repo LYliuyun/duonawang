@@ -1,0 +1,39 @@
+//引入
+@import 'var';
+
+
+header{
+	height:$height;
+	background:url('./img/menu_bg.gif');
+	.headbox{
+		width:$width;
+		height:$height;
+		margin:0 auto;
+		ul{
+			float:right;
+			li{ 
+				margin:10px 10px 0 0;
+				float:left;
+				a{
+
+					color:#fff;
+					display: block;
+					height:29px;
+					width:105px;
+					line-height:29px;
+					text-align:center;
+					font-size:16px;
+					font-weight:600;
+					&:hover{
+						background:#fff;
+						color:$color;
+						border-radius: 15px;
+						box-shadow: inset rgba(0,0,0,.6) 0px 1px 2px;
+					}
+				}
+				
+
+			}
+		}
+	}
+}

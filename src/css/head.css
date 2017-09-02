@@ -1,0 +1,17 @@
+body, ul, h2, p, h6, h5, ol, h3 { margin: 0; padding: 0; }
+
+a { text-decoration: none; }
+
+ul li { list-style: none; }
+
+header { height: 49px; background: url("./img/menu_bg.gif"); }
+
+header .headbox { width: 1200px; height: 49px; margin: 0 auto; }
+
+header .headbox ul { float: right; }
+
+header .headbox ul li { margin: 10px 10px 0 0; float: left; }
+
+header .headbox ul li a { color: #fff; display: block; height: 29px; width: 105px; line-height: 29px; text-align: center; font-size: 16px; font-weight: 600; }
+
+header .headbox ul li a:hover { background: #fff; color: #de1d0e; border-radius: 15px; box-shadow: inset rgba(0, 0, 0, 0.6) 0px 1px 2px; }
