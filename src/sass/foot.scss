@@ -23,6 +23,12 @@
 				line-height: 20px;
    				color: inherit;
 			}
+			em{
+				display: block;
+				width:98px;
+				height:98px;
+				background:url('./img/dcode.jpg') no-repeat;
+			}
 			p{
 				font-size:14px;
 				margin-top:10px;
@@ -64,12 +70,11 @@
 		.three{
 			width:210px;
 			height:185px;
-			img{
-				margin-left:20px;
+			i{
+				margin-left:40px;
 				width:184px;
-				height:auto;
-				text-align: center;
-				border:0;
+				height:135px;
+				background:url('./img/phone.jpg') no-repeat;
 				display: block;
 			}
 		}
@@ -79,11 +84,11 @@
 		margin:0 auto;
 		display: flex;
 		justify-content: center;
-		img{
-			border:0;
+		i{
 			display: block;
 			width: 114px;
 			height:56px;
+			background:url('./img/logo_footer.gif') no-repeat;
 		}
 	}
 	p{

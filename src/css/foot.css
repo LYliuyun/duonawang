@@ -1,4 +1,4 @@
-body, ul, h2, p, h6, h5, ol, h3 { margin: 0; padding: 0; }
+body, ul, h2, p, h6, h5, ol, h3, dl, dt { margin: 0; padding: 0; }
 
 a { text-decoration: none; }
 
@@ -11,6 +11,8 @@ ul li { list-style: none; }
 .footbox .foot .one { text-align: center; width: 230px; height: 185px; border-right: 1px solid #a9a9a9; height: 185px; }
 
 .footbox .foot .one h5 { font-size: 18px; font-weight: normal; margin: 10px 0; line-height: 20px; color: inherit; }
+
+.footbox .foot .one em { display: block; width: 98px; height: 98px; background: url("./img/dcode.jpg") no-repeat; }
 
 .footbox .foot .one p { font-size: 14px; margin-top: 10px; }
 
@@ -30,10 +32,10 @@ ul li { list-style: none; }
 
 .footbox .foot .three { width: 210px; height: 185px; }
 
-.footbox .foot .three img { margin-left: 20px; width: 184px; height: auto; text-align: center; border: 0; display: block; }
+.footbox .foot .three i { margin-left: 40px; width: 184px; height: 135px; background: url("./img/phone.jpg") no-repeat; display: block; }
 
 .footbox .imgbox { width: 1100px; margin: 0 auto; display: flex; justify-content: center; }
 
-.footbox .imgbox img { border: 0; display: block; width: 114px; height: 56px; }
+.footbox .imgbox i { display: block; width: 114px; height: 56px; background: url("./img/logo_footer.gif") no-repeat; }
 
 .footbox p { font-size: 14px; line-height: 20px; color: #000; margin-top: 20px; text-align: center; margin-bottom: 10px; }

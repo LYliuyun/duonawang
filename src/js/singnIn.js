@@ -89,40 +89,48 @@ require(['config'],function(){
 
 
 
-		})
+		});
 
-		//验证码
-		var verifyCode = new GVerify("v_container");	
-		$("#code_input").blur(function(){
-			var res = verifyCode.validate($("#code_input").val());
-			if(res){
-				$("#code_input").parent().find('span')[0].innerHTML = '';
-				$("#code_input").parent().find('span').html('验证码正确！').css({color:'green'});
-				$("#code_input").parent().prev().css({color:'green'});
-			}else{
-				$("#code_input").parent().find('span')[0].innerHTML = '';
-				$("#code_input").parent().find('span').html('验证码错误！').css({color:'red'});
-				$("#code_input").parent().prev().css({color:'red'});
-			}
-			
-		})
+		var verifyCode = new GVerify("v_container");
 
 		//绑定点击事件
 		$btn.on('click',function(e){
 			//阻止浏览器默认行为
 			e.preventDefault();
+
 			nameValue = $name[0].value.trim();
 			password = $pass[0].value.trim();
-			$.ajax({
-				url:'../api/singIn.php',
-				data:{name:nameValue,password:password},
-				success:function(res){
-					if(res == 'true'){
-						console.log(666)
-					}
-				}
 
-			})
+			//验证码				
+			$("#code_input").blur(function(){
+				var res = verifyCode.validate($("#code_input").val());
+				if(res){
+					$("#code_input").parent().find('span')[0].innerHTML = '';
+					$("#code_input").parent().find('span').html('验证码正确！').css({color:'green'});
+					$("#code_input").parent().prev().css({color:'green'});
+
+					$.ajax({
+						url:'../api/singIn.php',
+						data:{name:nameValue,password:password},
+						success:function(res){
+							if(res == 'true'){
+								location.href = '../index.html'; 
+							}
+						}
+
+					});
+
+					//写入cookie
+					document.cookie = 'name='+JSON.stringify(nameValue)+';path=/';
+				}else{
+					$("#code_input").parent().find('span')[0].innerHTML = '';
+					$("#code_input").parent().find('span').html('验证码错误！').css({color:'red'});
+					$("#code_input").parent().prev().css({color:'red'});
+				};
+			
+			});
+
+			
 
 			
 		})

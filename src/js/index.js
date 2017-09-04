@@ -1,9 +1,18 @@
 require(['config'],function(){
 
-	require(['jquery'],function($){
+	require(['jquery','index_head'],function($){
 
 		//引入头部
-		$('#index_load').load('./html/index_head.html .index_head');
+		$('#index_load').load('./html/index_head.html .index_head',function(){
+			$('.smallbox').children().eq(0).on('click',function(){
+			
+					location.href= './html/singnIn.html';
+			}).next().on('click',function(){location.href= './html/register.html';});
+
+			//高亮首页
+			$('.index_head').find('ul').children().eq(1).addClass('active');
+
+		});
 
 		//引入尾部
 		$('#index_foot').load('./html/foot.html .footbox');
@@ -79,7 +88,7 @@ require(['config'],function(){
 					return `
 						<li data-id="${item.id}">
 							<span>0${idx+1}</span>
-							<a href="##"><img src="./css/${item.img.split(',')[0]}"></a>
+							<a href="./html/details.html?id=${item.id}"><img src="./css/${item.img.split(',')[0]}"></a>
 							<a href="##" title="${item.list}" class="title">${item.list}</a>
 							<b>还剩余<em>${item.surplus}</em> 张</b>
 						</li>
@@ -114,7 +123,7 @@ require(['config'],function(){
 						return `
 							<li data-id="${item.id}">
 								<strong>剩余:${item.surplus}</strong>
-								<a href="##"><img src="./css/${item.img.split(',')[0]}"></a>
+								<a href="./html/details.html?id=${item.id}"><img src="./css/${item.img.split(',')[0]}"></a>
 								<a href="##" class="title">${item.list}</a>
 								<p>
 									<span>面值:<b>${item.pirce}</b>元</span>

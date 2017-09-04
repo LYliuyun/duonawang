@@ -1,0 +1,116 @@
+@import 'var';
+
+//高亮
+.active{
+	a{
+		background:#fff;
+		color:#de1d0e !important;
+		border-radius: 15px;
+		box-shadow: inset rgba(0,0,0,.6) 0px 1px 2px;
+	}	
+}
+
+.content{
+	padding-bottom:30px;
+	overflow:hidden;
+	width:$width;
+	margin:0 auto;
+	.goodslist{
+		overflow: hidden;
+		ul{
+
+			li{
+				overflow: hidden;
+				font-size:14px;
+				border: solid 1px #dadada;
+				border-radius: 6px/7px;
+				background-color: #f5f5f5;
+				margin:20px 15px;
+				float:left;
+				width:208px;
+				height:283px;
+				
+				&:hover{
+					background: #d7dce0;
+				}
+				strong{
+					font-size: 12px;
+					display: block;
+					color:#686868;
+					font-weight:100;
+					text-align:right;
+					margin-right:10px;
+					line-height:30px;
+				}
+				a{
+					img{
+						width:330px;
+						height:auto;
+						border:0;
+					}
+				}
+				.title{
+					display: block;
+					overflow: hidden;
+				    text-overflow: ellipsis;
+				    white-space: nowrap;
+				    font-weight:600;
+				    margin:0 10px;
+				    margin-top:6px;
+				    color:#686868;
+				    border-bottom: 1px solid #d7d7d7;
+				    &:hover{
+				    	color:rgb(155,5,5);
+				    	text-decoration: underline;
+				    }
+				}
+				p{
+					margin-top:5px;
+					span{
+
+						margin-left:10px;
+						b{	
+						margin:0 5px;							
+							color:#e92323;
+							font-size:24px;
+							font-weight: bold;
+						}
+					}
+					em{
+						margin-top:5px;
+						margin-right:10px;
+						float:right;
+						border-radius: 5px;
+					    background-color: #eb7171;
+					    padding: 3px 5px;
+					    font-size: 12px;
+					    color: #FFF;
+					}
+				}
+			}
+		}
+	}
+	.page{
+		text-align:center;
+		span{
+			cursor:pointer;
+			display: inline-block;
+			padding: 4px 12px;
+		    line-height: 20px;
+		    background-color: #ffffff;
+		    border: 1px solid #dddddd;
+		    color:#0088cc;
+		    border-left-width: 0;
+		    &:first-child{
+		    	border-left:1px solid #dddddd;
+		    }
+		    &:hover{
+		    	background:#f5f5f5;
+		    }
+		}
+		.pageActive{
+			background:#f5f5f5;
+			color:#999999;
+		}
+	}
+}

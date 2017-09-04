@@ -7,7 +7,16 @@ require.config({
 	paths:{
 		jquery:'../lib/jquery-3.1.1',
 		gVerify:'../lib/gVerify',
-	}
+		index_head:'./index_head',
+		magnifier:'./Magnifier',
+	},
+
+	 shim: {
+         index_head: {
+             deps: ["jquery"],
+             magnifier:["jquery"],
+         }
+    }
 
 
 });

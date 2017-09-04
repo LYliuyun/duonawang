@@ -1,0 +1,41 @@
+body, ul, h2, p, h6, h5, ol, h3, dl, dt { margin: 0; padding: 0; }
+
+a { text-decoration: none; }
+
+ul li { list-style: none; }
+
+.active a { background: #fff; color: #de1d0e !important; border-radius: 15px; box-shadow: inset rgba(0, 0, 0, 0.6) 0px 1px 2px; }
+
+.content { padding-bottom: 30px; overflow: hidden; width: 1200px; margin: 0 auto; }
+
+.content .goodslist { overflow: hidden; }
+
+.content .goodslist ul li { overflow: hidden; font-size: 14px; border: solid 1px #dadada; border-radius: 6px/7px; background-color: #f5f5f5; margin: 20px 15px; float: left; width: 208px; height: 283px; }
+
+.content .goodslist ul li:hover { background: #d7dce0; }
+
+.content .goodslist ul li strong { font-size: 12px; display: block; color: #686868; font-weight: 100; text-align: right; margin-right: 10px; line-height: 30px; }
+
+.content .goodslist ul li a img { width: 330px; height: auto; border: 0; }
+
+.content .goodslist ul li .title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; margin: 0 10px; margin-top: 6px; color: #686868; border-bottom: 1px solid #d7d7d7; }
+
+.content .goodslist ul li .title:hover { color: #9b0505; text-decoration: underline; }
+
+.content .goodslist ul li p { margin-top: 5px; }
+
+.content .goodslist ul li p span { margin-left: 10px; }
+
+.content .goodslist ul li p span b { margin: 0 5px; color: #e92323; font-size: 24px; font-weight: bold; }
+
+.content .goodslist ul li p em { margin-top: 5px; margin-right: 10px; float: right; border-radius: 5px; background-color: #eb7171; padding: 3px 5px; font-size: 12px; color: #FFF; }
+
+.content .page { text-align: center; }
+
+.content .page span { cursor: pointer; display: inline-block; padding: 4px 12px; line-height: 20px; background-color: #ffffff; border: 1px solid #dddddd; color: #0088cc; border-left-width: 0; }
+
+.content .page span:first-child { border-left: 1px solid #dddddd; }
+
+.content .page span:hover { background: #f5f5f5; }
+
+.content .page .pageActive { background: #f5f5f5; color: #999999; }

@@ -1,4 +1,4 @@
-body, ul, h2, p, h6, h5, ol, h3 { margin: 0; padding: 0; }
+body, ul, h2, p, h6, h5, ol, h3, dl, dt { margin: 0; padding: 0; }
 
 a { text-decoration: none; }
 
@@ -15,6 +15,12 @@ ul li { list-style: none; }
 .index_head .topbox .top .smallbox a, .index_head .topbox .top p a { margin-right: 20px; color: #999; font-size: 12px; line-height: 30px; }
 
 .index_head .topbox .top .smallbox a:hover, .index_head .topbox .top p a:hover { color: #e92323; text-decoration: underline; }
+
+.index_head .topbox .top .bigbox { display: none; float: left; }
+
+.index_head .topbox .top .bigbox p { color: #999; font-size: 12px; }
+
+.index_head .topbox .top .bigbox p a { border: 0; }
 
 .index_head .topbox .top p { float: right; }
 
@@ -52,13 +58,13 @@ ul li { list-style: none; }
 
 .index_head .navbox .nav ul li a:hover { background: #fff; color: #de1d0e; border-left: 0; border-radius: 15px; box-shadow: inset rgba(0, 0, 0, 0.6) 0px 1px 2px; }
 
-.index_head .navbox .nav ul li:nth-child(1) { position: relative; border: 0; }
+.index_head .navbox .nav ul li:nth-child(1) { margin-top: 0; position: relative; border: 0; }
 
-.index_head .navbox .nav ul li:nth-child(1) a { margin-right: 80px; margin-left: 30px; }
+.index_head .navbox .nav ul li:nth-child(1) a { display: block; line-height: 49px; margin-right: 80px; margin-left: 30px; }
 
 .index_head .navbox .nav ul li:nth-child(1) a:hover { color: #eee; background: none; box-shadow: none; border-radius: none; }
 
-.index_head .navbox .nav ul li:nth-child(1) .list { z-index: 99; overflow: hidden; top: 39px; left: 0; position: absolute; width: 210px; height: 419px; }
+.index_head .navbox .nav ul li:nth-child(1) .list { z-index: 99; overflow: hidden; top: 39px; left: 0; top: 48px; position: absolute; width: 210px; height: 419px; }
 
 .index_head .navbox .nav ul li:nth-child(1) .list ul { position: absolute; width: 206px; height: 415px; border: 2px solid #e12213; background: #f5f0f0; border-top: 0; }
 
