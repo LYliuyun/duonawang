@@ -22,16 +22,16 @@ require(['config'],function(){
 			this.each(function(){
 				//给当前元素添加类
 				var $box = $(this).addClass('zoom');
-
+			
 				//生成放大镜写入当前元素并添加类
-				var $minbox = $('<div/>').addClass('minbox');
-				$minbox.appendTo($box);
-
-				//获取大图
-				var $bigbox = $(opt.ele);
+				var $xiao = $('<div/>').addClass('min');
+				$xiao.appendTo($box);
 		
+				//生成大图
+				var $da = $(opt.ele);
+
 				//定义盒子宽高
-				$bigbox.css({
+				$da.css({
 					width:opt.width,
 					height:opt.height,
 				});
@@ -39,42 +39,42 @@ require(['config'],function(){
 				//鼠标移入事件
 				$box.on('mouseenter',function(){
 					//显示
-					$minbox.show();
-					$bigbox.show();
+					$xiao.show();
+					$da.show();
 
 				})
 				//鼠标移出事件
 				.on('mouseleave',function(){
 					//隐藏
-					$minbox.hide();
-					$bigbox.hide();
+					$xiao.hide();
+					$da.hide();
 				})
 				//鼠标移动事件
 				.on('mousemove',function(e){
 					//放大镜位置
-					var left =e.pageX-$minbox.outerWidth()/2-$box.offset().left;
-					var top = e.pageY-$minbox.outerHeight()/2-$box.offset().top;
+					var left =e.pageX-$xiao.outerWidth()/2-$box.offset().left;
+					var top = e.pageY-$xiao.outerHeight()/2-$box.offset().top;
 
 					//比例
-					var num =$bigbox.find('img').outerWidth()/$box.find('img').outerWidth();
+					var num =$da.find('img').outerWidth()/$box.find('img').outerWidth();
 
 					//放大镜移动区域
 					//left
 					if(left<0){
 						left = 0;
-					}else if(left>$box.outerWidth()-$minbox.outerWidth()){
-						left = $box.outerWidth()-$minbox.outerWidth();
+					}else if(left>$box.outerWidth()-$xiao.outerWidth()){
+						left = $box.outerWidth()-$xiao.outerWidth();
 					};
 
 					//top
 					if(top<0){
 						top = 0;
-					}else if(top>$box.outerHeight()-$minbox.outerHeight()){
-						top = $box.outerHeight()-$minbox.outerHeight();
+					}else if(top>$box.outerHeight()-$xiao.outerHeight()){
+						top = $box.outerHeight()-$xiao.outerHeight();
 					};
 
 					//放大镜跟随效果和大小
-					$minbox.css({
+					$xiao.css({
 						left:left,
 						top:top,
 						width:opt.width/num,
@@ -82,10 +82,10 @@ require(['config'],function(){
 					});
 
 					//大图显示区域
-					$bigbox.find('img').css({
+					$da.find('img').css({
 						left:-left*num,
 						top:-top*num,
-						zIndex:3,
+	
 					});
 
 					//大图显示方向/距离
@@ -100,7 +100,7 @@ require(['config'],function(){
 						//上
 						case 'top':
 							bigleft = $box.offset().left;
-							bigtop = $box.offset().top - $bigbox.outerHeight() - opt.distance;
+							bigtop = $box.offset().top - $da.outerHeight() - opt.distance;
 							break;
 						//下
 						case 'bottom':
@@ -109,7 +109,7 @@ require(['config'],function(){
 							break;
 						//左
 						case 'left':
-							bigleft =  $box.offset().left - $bigbox.outerWidth() - opt.distance;
+							bigleft =  $box.offset().left - $da.outerWidth() - opt.distance;
 							bigtop = $box.offset().top;
 							break;
 						//右下方
@@ -119,13 +119,13 @@ require(['config'],function(){
 							break;
 						//左下方
 						case 'sitDown':
-							bigleft = $box.offset().left - $bigbox.outerWidth() - opt.distance;
+							bigleft = $box.offset().left - $da.outerWidth() - opt.distance;
 							bigtop = $box.offset().top + $box.outerHeight() + opt.distance;
 
 					};
-					$bigbox.css({
+					$da.css({
 						left:bigleft,
-						top:0,
+						top:bigtop,
 					});
 			
 				});
@@ -136,4 +136,4 @@ require(['config'],function(){
 		};
 	});
 
-});
+})

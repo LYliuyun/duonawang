@@ -4,7 +4,7 @@ a { text-decoration: none; }
 
 ul li { list-style: none; }
 
-.footbox { height: 318px; border-top: 5px solid #cc3333; background: #eee; }
+.footbox { clear: both; height: 318px; border-top: 5px solid #cc3333; background: #eee; }
 
 .footbox .foot { padding-top: 10px; width: 1100px; margin: 0 auto; display: flex; }
 
@@ -12,7 +12,7 @@ ul li { list-style: none; }
 
 .footbox .foot .one h5 { font-size: 18px; font-weight: normal; margin: 10px 0; line-height: 20px; color: inherit; }
 
-.footbox .foot .one em { display: block; width: 98px; height: 98px; background: url("./img/dcode.jpg") no-repeat; }
+.footbox .foot .one em { display: block; width: 98px; height: 98px; margin-left: 66px; background: url("./img/dcode.jpg") no-repeat; }
 
 .footbox .foot .one p { font-size: 14px; margin-top: 10px; }
 

@@ -2,6 +2,7 @@
 
 
 .footbox{
+	clear:both;
 	height:318px;
 	border-top:5px solid #cc3333;
 	background:#eee;
@@ -27,6 +28,7 @@
 				display: block;
 				width:98px;
 				height:98px;
+				margin-left:66px;
 				background:url('./img/dcode.jpg') no-repeat;
 			}
 			p{

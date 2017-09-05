@@ -12,66 +12,85 @@
 
 //内容
 .details_content{
+	clear:both;
 	width:$width;
 	margin:0 auto;
-
+	.breadcrumbs{
+		overflow: hidden;
+		font-size: 14px;
+		line-height:35px;
+		a{
+			font-size: 14px;
+			color:#0088cc;
+		}
+	}
 	//详情
 	.details{
-		padding:10px;
 		overflow: hidden;
+		margin-bottom: 0;
+		min-height: 310px;
+		padding:10px;
+		padding-bottom:0;
 		border: 1px solid #dcdcdc;
-		ul{
+
+		//图片
+		.imgb{
 			float:left;
-			li{
-    			margin-top: 15px;
-				a{
-					display: block;
-					img{
-						border:0;
+			width:650px;
+			display: flex;	
+			justify-content: space-between;
+			ul{
+				width:166px;
+				li{
+					margin-top: 15px;
+					a{
 						display: block;
-						width:160px;
-						height:auto;
-						border:3px solid #fff;
-					}
-					&:hover{
 						img{
-							border:3px solid #e01f11;
+							border:0;
+							display: block;
+							width:160px;
+							height:auto;
+							border:3px solid #fff;
 						}
-						
+						&:hover{
+							img{
+								border:3px solid #e01f11;
+							}
+							
+						}
+					}
+					&:first-child{
+						margin-top:0;
 					}
 				}
-				&:first-child{
-					margin-top:0;
-				}
 			}
-		}
-		.small{
-			display: relative;
-			float:left;
-			overflow: hidden;
-			a{
+			div{
+				margin-top:20px;
+				position:relative;
+				margin:0;
+				padding:0;
+				border:1px solid #ddd;
+				width:400px;
+				height:215px;
 				img{
-					border:1px solid #d2d2d2;
-					margin:45px 0 0 70px;
 					width:400px;
-					height:auto;
+					height:215px;
+					display: block;
 				}
 			}
-			.zoom{
+			.min{
+				margin-top:0;
 				position:absolute;
 				left:0;
 				top:0;
-				display: none;
-				background:red;
+				background:rgba(255,255,255,.3);
 			}
-	
+
 		}
-		.bigbox{
-			border:1px solid #ddd;
-			display: none;
-			position: relative;
-		}
+			
+		// 详情介绍	
 		.detailsbox{
+			padding-bottom:5px;
 			float:right;
 			width:430px;
 			p{
@@ -103,6 +122,7 @@
 					}
 				}
 				&:last-child{
+					margin-bottom:5px;
 					margin-top:10px;
 					line-height: 20px;
 					font-size:14px;
@@ -192,5 +212,184 @@
 			}
 
 		}
+
+		//放大镜
+		.dabox{
+			overflow: hidden;
+			display: none;
+			border:1px solid #ddd;
+			position:absolute;
+			margin: 0;
+			padding:0;
+			img{
+				margin: 0;
+				padding:0;
+				display: inline-block;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		}
+	}
+
+	// 商品详解
+	.details_content_box{
+		margin-top:30px;
+
+		// 热门
+		.details_hot{
+			float:right;
+			width:310px;
+			h3{
+				height: 45px;
+			    line-height: 45px;
+			    background: #f4887f;
+			    width: inherit;
+			    color: white;
+			    font-size: 24.5px;
+			    text-indent: 1em;
+			}
+			ul{
+				border: 1px solid #d2d2d2;
+				li{
+					overflow: hidden;
+					text-align: center;
+					border-bottom: 1px solid #d2d2d2;
+					margin:10px 10px;
+					a{
+						img{
+							width:288px;
+						}
+					}
+					div{
+						margin-bottom:10px;
+						float:left;
+						width:190px;
+						height:40px;
+						b{
+							display: block;
+							overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+						     color:#333;
+						     text-indent: 1em;
+						     font-size:14px;
+						     line-height:20px;
+						}
+						span{
+						     text-indent: 1em;
+							text-align:left;
+							font-size:12px;
+							line-height:20px;
+							display: block;
+							i{
+								margin-right:5px;
+								color:#e92323;
+							}
+						}
+					}
+					.title{
+						float:right;
+						width:90px;
+						height:40px;
+						display: inline-block;
+						background:url('./img/detailicon.png') no-repeat 0 -491px;
+
+					}
+
+				}
+			}
+		}
+
+		.details_list_box{
+			float:left;
+			border:1px solid #ddd;
+			width:870px;
+			.details_nav{
+				background-image: linear-gradient(to top, #eaeaea, #fff);
+				height:40px;
+				width:870px;
+				ul{
+					li{
+						border-bottom: 1px solid #d9d9d9;
+						text-align:center;
+						border-right: 1px solid #dcdcdc;
+						width:110px;
+						height:40px;
+						line-height:40px;
+						font-size:14px;
+						float:left;
+						a{
+							display: block;
+							width:110px;
+							height:36px;
+							color:#000;
+						}
+						&:last-child{
+							float:right;
+							border:0;
+							width:138px;
+							input{
+								padding-left:5px;
+								float:right;
+								width:93px;
+								height:28px;
+								border-radius: 4px;
+								margin-top:5px;
+								border: 1px solid #cccccc;
+								margin-left:10px;
+							}
+						}
+						&:nth-child(6){
+							margin-left:30px;
+							float:right;
+							border:0;
+							a{
+								width:90px;
+								height:36px;
+								display: block;
+    							background: url('./img/detailicon.png') no-repeat 0px -54px ;
+							}
+						}
+						&.liclass{
+							border-bottom:0;
+							background:#fff;
+							a{
+								line-height:36px;
+								border-top:4px solid #df1f1f;
+							}
+						}
+					}
+
+				}
+			}
+			.flexd{
+				position:fixed;
+				top:0;
+			}
+			.details_loti{
+				#one_box{
+					padding-top:20px;
+					h4{
+						margin-left:-25px;
+						width:110px;
+						height:50px;
+						background:url('./img/detailicon.png') no-repeat 0 0 ;
+						color:#fff;
+						font-size:14px;
+						line-height:33px;
+						text-align:center;
+					}
+					img{
+						border:0;
+						margin-left:20px;
+					}
+				}
+				#two_box,#three_box,#four_box,#five_box{
+					@extend #one_box;
+				}
+			}
+		}
+
 	}
 }
