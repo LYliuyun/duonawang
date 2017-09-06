@@ -12,6 +12,19 @@ require(['config'],function(){
 			//高亮首页
 			$('.index_head').find('ul').children().eq(1).addClass('active');
 
+
+				//点击
+			var $ele = $('.list').parent().siblings();
+			for(var i=0;i<$ele.length;i++){
+				if(i>0){
+					$ele.eq(i).on('click',function(){
+						var $total = $(this).find('a').html();
+						location.href = './html/list.html?total='+$total;
+					});
+				}
+
+			}
+
 		});
 
 		//引入尾部

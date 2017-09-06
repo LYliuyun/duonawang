@@ -65,10 +65,8 @@
 				}
 			}
 			div{
-				margin-top:20px;
+				margin-top:30px;
 				position:relative;
-				margin:0;
-				padding:0;
 				border:1px solid #ddd;
 				width:400px;
 				height:215px;
@@ -172,19 +170,15 @@
 						}
 					}
 					a{
-						border-radius:4px;
-						color: #ffffff;
-					    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-					    background-color: #da4f49;
-					    background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
-						font-size:18px;
-						text-align: center;
-						line-height:45px;
-						margin-right:60px;
+						margin-right:75px;
+						background:url('./img/detailicon.png') no-repeat -6px -347px;
 						display: block;
-						width:146px;
-						height:45px;
+						width:127px;
+						height:37px;
 						float:right;
+						&:hover{
+							background-position:-6px -439px;
+						}
 					}
 				}		
 			}
@@ -385,7 +379,7 @@
 						margin-left:20px;
 					}
 				}
-				#two_box,#three_box,#four_box,#five_box{
+				#two_box,#three_box{
 					@extend #one_box;
 				}
 			}

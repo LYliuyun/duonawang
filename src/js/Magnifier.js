@@ -125,7 +125,7 @@ require(['config'],function(){
 					};
 					$da.css({
 						left:bigleft,
-						top:bigtop,
+						top:bigtop-30,
 					});
 			
 				});

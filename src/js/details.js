@@ -7,7 +7,9 @@ require(['config'],function(){
 		//引入头部
 		$('.details_head').load('./index_head.html .index_head',function(){
 			//第一个高亮
-			$('.nav ul li:nth-child(2)').addClass('active');
+			$('.nav ul li:nth-child(2)').addClass('active').on('click',function(){
+				location.href = '../index.html';
+			});
 
 			//动画
 			$('.list ul').css({top:-417});
@@ -46,10 +48,35 @@ require(['config'],function(){
 
 			});
 
+			var $ele = $('.list').parent().siblings();
+			for(var i=0;i<$ele.length;i++){
+				if(i>0){
+					$ele.eq(i).on('click',function(){
+						var $total = $(this).find('a').html();
+						location.href = './list.html?total='+$total;
+					});
+				}
+			}
+
 		});
 
 		//引入尾部
 		$('.details_foot').load('./foot.html .footbox');
+
+		//获取cookie
+		var cookie = document.cookie.split(';');
+
+		var data = [];
+		//遍历找出相对应的cookie
+		cookie.forEach(function(item){
+			var res = item.split('=');
+			if(res[0] == 'goods'){
+				data = JSON.parse(res[1]);
+			}else{
+				data = [];
+			}
+		})
+
 
 		//参数
 		var id = location.search.slice(1).split('=')[1];
@@ -112,7 +139,7 @@ require(['config'],function(){
 							</i>
 							<b class="fl mt5">张</b>
 						</dd>
-					</dl><a href="##">加入购物车</a>`);
+					</dl><a href="./cart.html" id="details_btn"></a>`);
 
 					//大图
 					$('.dabox').html($xiaobox.html());
@@ -122,20 +149,42 @@ require(['config'],function(){
 					$('.detailsbox').append($div);
 					$('.detailsbox').append($btn);
 
+					//放大镜
+					$('.xiaobox').Magnifier({
+						ele:'.dabox',
+						distance:20,
+					}); 
 
 					//商品详解
 					$('#one_box').append(`<img src="../css/${item.newimg.split(',')[0]}">`);
 					$('#two_box').append(`<img src="../css/${item.newimg.split(',')[1]}">`);
+
+					//绑定点击事件
+					$btn.find('#details_btn').on('click',function(){
+						
+						//数据
+						var data_res = {
+							qty:$btn.find('input').val(),
+							id:item.id,
+							total:item.total,
+							img:item.img,
+							pirce:item.pirce,
+							list:item.list,
+							rebate:item.rebate,
+							surplus:item.surplus,
+						};
+
+						data.push(data_res);
+				
+						//写入cookie
+						document.cookie = 'goods='+JSON.stringify(data);
+					})
 					
 				
 				})
 			}
 		});
 
-		//放大镜
-		$('.xiaobox').Magnifier({
-			ele:'.dabox',
-		});
 		// 热门商品
 		//热门
 		$.ajax({

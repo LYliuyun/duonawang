@@ -39,6 +39,19 @@ require(['config'],function(){
 				});
 				
 			});
+
+			//点击
+			var $ele = $('.list').parent().siblings();
+			for(var i=0;i<$ele.length;i++){
+				$ele.eq(0).on('click',function(){location.href= '../index.html';})
+				if(i>0){
+					$ele.eq(i).on('click',function(){
+						var $total = $(this).find('a').html();
+						location.href = './list.html?total='+$total;
+					});
+				}
+
+			}
 		});
 
 		//引入尾部

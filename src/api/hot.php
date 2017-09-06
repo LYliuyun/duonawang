@@ -13,13 +13,13 @@
 	$conn->set_charset('utf8');
 
 	//获取前端传来的数据
-	$hot = isset($_GET['hot'])? $_GET['hot']:'false';
+	$hot = isset($_GET['hot'])? $_GET['hot']:'';
 	$total = isset($_GET['total'])? $_GET['total']:'';
 
 	// 查找所有用户信息
 	$sql = "select * from list " ;
 
-	if($hot == 'true'){
+	if($hot){
 		
 		$sql .= "where hot='$hot'";
 	};

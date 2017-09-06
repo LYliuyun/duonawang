@@ -29,7 +29,7 @@ ul li { list-style: none; }
 
 .details_content .details .imgb ul li:first-child { margin-top: 0; }
 
-.details_content .details .imgb div { margin-top: 20px; position: relative; margin: 0; padding: 0; border: 1px solid #ddd; width: 400px; height: 215px; }
+.details_content .details .imgb div { margin-top: 30px; position: relative; border: 1px solid #ddd; width: 400px; height: 215px; }
 
 .details_content .details .imgb div img { width: 400px; height: 215px; display: block; }
 
@@ -61,7 +61,9 @@ ul li { list-style: none; }
 
 .details_content .details .detailsbox p:last-child dl dd b { display: inline-block; margin-top: 5px; margin-left: 10px; font-weight: 100; }
 
-.details_content .details .detailsbox p:last-child a { border-radius: 4px; color: #ffffff; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); background-color: #da4f49; background-image: linear-gradient(to bottom, #ee5f5b, #bd362f); font-size: 18px; text-align: center; line-height: 45px; margin-right: 60px; display: block; width: 146px; height: 45px; float: right; }
+.details_content .details .detailsbox p:last-child a { margin-right: 75px; background: url("./img/detailicon.png") no-repeat -6px -347px; display: block; width: 127px; height: 37px; float: right; }
+
+.details_content .details .detailsbox p:last-child a:hover { background-position: -6px -439px; }
 
 .details_content .details .detailsbox div { margin-top: 10px; padding-bottom: 5px; display: flex; justify-content: center; border-bottom: 1px dashed #d6d6d6; }
 
@@ -119,8 +121,8 @@ ul li { list-style: none; }
 
 .details_content .details_content_box .details_list_box .flexd { position: fixed; top: 0; }
 
-.details_content .details_content_box .details_list_box .details_loti #one_box, .details_content .details_content_box .details_list_box .details_loti #two_box, .details_content .details_content_box .details_list_box .details_loti #three_box, .details_content .details_content_box .details_list_box .details_loti #four_box, .details_content .details_content_box .details_list_box .details_loti #five_box { padding-top: 20px; }
+.details_content .details_content_box .details_list_box .details_loti #one_box, .details_content .details_content_box .details_list_box .details_loti #two_box, .details_content .details_content_box .details_list_box .details_loti #three_box { padding-top: 20px; }
 
-.details_content .details_content_box .details_list_box .details_loti #one_box h4, .details_content .details_content_box .details_list_box .details_loti #two_box h4, .details_content .details_content_box .details_list_box .details_loti #three_box h4, .details_content .details_content_box .details_list_box .details_loti #four_box h4, .details_content .details_content_box .details_list_box .details_loti #five_box h4 { margin-left: -25px; width: 110px; height: 50px; background: url("./img/detailicon.png") no-repeat 0 0; color: #fff; font-size: 14px; line-height: 33px; text-align: center; }
+.details_content .details_content_box .details_list_box .details_loti #one_box h4, .details_content .details_content_box .details_list_box .details_loti #two_box h4, .details_content .details_content_box .details_list_box .details_loti #three_box h4 { margin-left: -25px; width: 110px; height: 50px; background: url("./img/detailicon.png") no-repeat 0 0; color: #fff; font-size: 14px; line-height: 33px; text-align: center; }
 
-.details_content .details_content_box .details_list_box .details_loti #one_box img, .details_content .details_content_box .details_list_box .details_loti #two_box img, .details_content .details_content_box .details_list_box .details_loti #three_box img, .details_content .details_content_box .details_list_box .details_loti #four_box img, .details_content .details_content_box .details_list_box .details_loti #five_box img { border: 0; margin-left: 20px; }
+.details_content .details_content_box .details_list_box .details_loti #one_box img, .details_content .details_content_box .details_list_box .details_loti #two_box img, .details_content .details_content_box .details_list_box .details_loti #three_box img { border: 0; margin-left: 20px; }
