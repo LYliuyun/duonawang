@@ -12,10 +12,10 @@ require.config({
 	},
 
 	 shim: {
-         index_head: {
-             deps: ["jquery"],
-             magnifier:["jquery"],
-         }
+         
+         index_head: ["jquery"],
+         magnifier:["jquery","index_head"],
+   
     }
 
 

@@ -31,37 +31,11 @@ require(['config'],function(){
 						var res = item.split('=');
 		
 						if(res[0] == 'goods'){
-							if(JSON.parse(res[1])==''){
-								console.log(666)
-								data = [];
-
-								//生成结构
-								var $ly_cart = $('<div/>');
-								$ly_cart.addClass('ly_cart');
-								$ly_cart.html(`
-										<img src="../img/cart.png">
-										<span>您的购物车还是空空如也哦，事不宜迟，赶紧尽情地去<a href="../index.html">shopping</a>吧！！！</span>
-									`)
-								this.$parent.html('');
-								this.$parent.append($ly_cart);
-							}else{
-								data = JSON.parse(res[1]);
-							}
 							
+							data = JSON.parse(res[1]);
+								
 
-						}else{
-							data = [];
-							//生成结构
-							var $ly_cart = $('<div/>');
-							$ly_cart.addClass('ly_cart');
-							$ly_cart.html(`
-									<img src="../img/cart.png">
-									<span>您的购物车还是空空如也哦，事不宜迟，赶紧尽情地去<a href="../index.html">shopping</a>吧！！！</span>
-								`)
-							this.$parent.html('');
-							this.$parent.append($ly_cart);
-							return;
-						}
+						}							
 					})
 				}else{
 					data = [];
@@ -156,6 +130,43 @@ require(['config'],function(){
 						//获取id
 						var id = $(target).closest('tr').attr('data-id');
 						this.removeCookie(id);
+					};
+
+					//加
+					if(target.id == 'jia'){
+						var vals = $(target).prev().val();
+						 vals++;
+						 $(target).prev().val(vals);
+
+						 //更改单价
+						 var newPirce = $(target).parent().prev().html()*vals;
+						 $(target).parent().next().find('b').html(newPirce);
+
+						 //更改总价
+						var newTotal = Number($tfoot.find('b')[0].innerHTML);
+						newTotal += Number($(target).parent().prev()[0].innerHTML);
+						$tfoot.find('b').html(newTotal);
+					
+					};
+
+					//减
+					if(target.id == 'jian'){
+						var vals = $(target).next().val();
+						 vals--;
+						 if(vals<1){
+						 	vals = 1;
+						 	return;
+						 }
+						 $(target).next().val(vals);
+
+						 //更改单价
+						var newPirce = $(target).parent().prev().html()*vals;
+						$(target).parent().next().find('b').html(newPirce);
+
+						 //更改总价
+						var newTotal = Number($tfoot.find('b')[0].innerHTML);
+						newTotal -= Number($(target).parent().prev()[0].innerHTML);
+						$tfoot.find('b').html(newTotal);
 					}
 							
 				}
@@ -165,7 +176,6 @@ require(['config'],function(){
 					this.qkCookie();
 
 				});	
-
 
 				this.data = data;
 				//链式调用
@@ -197,6 +207,8 @@ require(['config'],function(){
 
 				this.init();
 			}
+
+
 
 		}
 

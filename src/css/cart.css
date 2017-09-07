@@ -97,7 +97,7 @@ ul li { list-style: none; }
 
 .cart_content .cart_goods .cart_goods_list table tfoot tr td { text-align: left; }
 
-.cart_content .cart_goods .cart_goods_list table tfoot tr td a { margin-left: 7px; color: #5e5e5e; }
+.cart_content .cart_goods .cart_goods_list table tfoot tr td a { margin-left: 2px; color: #5e5e5e; }
 
 .cart_content .cart_goods .cart_goods_list table tfoot tr td a:hover { color: red; text-decoration: underline; }
 

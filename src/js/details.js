@@ -83,7 +83,7 @@ require(['config'],function(){
 
 		//传给后端
 		var $small = $('.imgb');
-	
+		var vlaue_qty = 1;
 		// 商品详情
 		$.ajax({
 			url:'../api/details.php',
@@ -132,7 +132,7 @@ require(['config'],function(){
 					$btn.html(`<dl>
 						<dt>数量：</dt>
 						<dd>
-							<input type="text" title="请输入购买量" value="1" />
+							<input type="text" title="请输入购买量" value="${vlaue_qty}" />
 							<i>
 								<em id="addOne" href="##"></em>
 								<em id="subOne" href="##"></em>
@@ -149,15 +149,26 @@ require(['config'],function(){
 					$('.detailsbox').append($div);
 					$('.detailsbox').append($btn);
 
-					//放大镜
-					$('.xiaobox').Magnifier({
-						ele:'.dabox',
-						distance:20,
-					}); 
-
 					//商品详解
 					$('#one_box').append(`<img src="../css/${item.newimg.split(',')[0]}">`);
 					$('#two_box').append(`<img src="../css/${item.newimg.split(',')[1]}">`);
+
+					//事件委托绑定点击事件
+					//减
+					$btn.on('click','#subOne',function(){
+						vlaue_qty--;
+						if(vlaue_qty<1){
+							vlaue_qty = 1;
+							return;
+						}
+						$btn.find('input').val(vlaue_qty);
+						
+					})
+					//加
+					$btn.on('click','#addOne',function(){
+						vlaue_qty++;
+						$btn.find('input').val(vlaue_qty);
+					})
 
 					//绑定点击事件
 					$btn.find('#details_btn').on('click',function(){
@@ -179,6 +190,13 @@ require(['config'],function(){
 						//写入cookie
 						document.cookie = 'goods='+JSON.stringify(data);
 					})
+
+
+					//放大镜
+					$('.xiaobox').Magnifier({
+						ele:'.dabox',
+						distance:20,
+					}); 
 					
 				
 				})

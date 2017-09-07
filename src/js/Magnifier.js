@@ -1,5 +1,5 @@
 require(['config'],function(){
-	require(['jquery','magnifier'],function($){
+	require(['jquery'],function($){
 		//放大镜效果
 		$.fn.Magnifier = function(data){
 			//默认数据

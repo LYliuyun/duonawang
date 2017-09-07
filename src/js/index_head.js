@@ -14,10 +14,11 @@ require(['config'],function(){
 				var res = item.split('=');
 				if(res[0] == 'name'){
 					data = JSON.parse(res[1]);
+					$('.smallbox').hide();
+					$('.bigbox').show();
 				}
 			});
-			$('.smallbox').hide();
-			$('.bigbox').show();
+			
 		}else{
 			dara = [];
 			$('.smallbox').show();
