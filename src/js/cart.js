@@ -56,7 +56,7 @@ require(['config'],function(){
 				var $thead = $('<thead/>');
 				$thead.html(`
 						<tr>
-							<td><input type="checkbox" checked/>全选</td>
+							<td><input type="checkbox" class="all" checked/>全选</td>
 							<td>商品信息</td>
 							<td>单价</td>
 							<td>数量</td>
@@ -77,7 +77,7 @@ require(['config'],function(){
 				
 					return `
 						<tr data-id="${item.id}">
-							<td><input type="checkbox" checked/></td>
+							<td><input type="checkbox" class="checkAll" checked/></td>
 							<td>
 								<div>
 									<img src="../css/${item.img.split(',')[0]}"/>
@@ -109,7 +109,7 @@ require(['config'],function(){
 				$tfoot = $('<tfoot/>');
 				$tfoot.html(`	
 						<tr>
-							<td><input type="checkbox"/>反选</td>
+							<td><input type="checkbox" class="invert"/>反选</td>
 							<td><a href="##" id="cart_qk">清空</a></td>
 							<td>总价:<b>${cart_total}</b></td>
 							<td></td>
@@ -176,6 +176,59 @@ require(['config'],function(){
 					this.qkCookie();
 
 				});	
+
+				//总价
+				var totalPirce =0;
+				for(var j=0;j<$tbody.find('.checkAll').length;j++){
+			
+					if($tbody.find('.checkAll').eq(j)[0].checked){
+						$tbody.find('tr').eq(j).addClass('checkedActive');
+						totalPirce += Number($tbody.find('tr').eq(j).find('b').html());
+						$tfoot.find('b').html(totalPirce);
+					}
+				}
+
+				//绑定点击事件
+				$tbody.on('click','.checkAll',function(){
+					for(var i=0;i<$tbody.find('.checkAll').length;i++){
+						//有一个没被勾上则全选不会勾上
+						if(!$tbody.find('.checkAll').eq(i)[0].checked){
+							$tbody.find('tr').eq(i).removeClass('checkedActive');
+							$thead.find('.all')[0].checked = false;
+
+							break;
+						}
+						$tbody.find('tr').eq(i).addClass('checkedActive');
+						$thead.find('.all')[0].checked = true;
+						$tfoot.find('.invert')[0].checked = false;
+					}
+				})
+
+				//checked
+				// 全选
+				$thead.on('click','.all',function(){
+					for(var i=0;i<$tbody.find('.checkAll').length;i++){
+
+						$tbody.find('.checkAll').eq(i)[0].checked = this.checked;
+						
+					}
+				});
+
+				//反选
+				$tfoot.on('click','.invert',function(){
+					for(var i=0;i<$tbody.find('.checkAll').length;i++){
+						//勾上的取消
+						if($tbody.find('.checkAll').eq(i)[0].checked){
+							$tbody.find('.checkAll').eq(i)[0].checked = false;
+						}else{
+							$tbody.find('.checkAll').eq(i)[0].checked = true;
+						}
+
+						//全选取消
+						$thead.find('.all')[0].checked = !this.checked;
+
+					}
+				});
 
 				this.data = data;
 				//链式调用

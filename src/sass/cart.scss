@@ -185,7 +185,6 @@
 
 				}
 				tbody{
-					background:#eaf9ff;
 					tr{
 
 						td{
@@ -271,6 +270,10 @@
 							}
 							b::before{content:"￥"}
 						}
+
+					}
+					.checkedActive{
+						background:#eaf9ff;
 					}
 				}
 				tfoot{
