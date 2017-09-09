@@ -64,18 +64,25 @@ require(['config'],function(){
 		$('.details_foot').load('./foot.html .footbox');
 
 		//获取cookie
-		var cookie = document.cookie.split(';');
+		var cookie = document.cookie;
 
+		//商品数据
 		var data = [];
+
+		//用户名数据
+		//var name = laoxie;
 		//遍历找出相对应的cookie
-		cookie.forEach(function(item){
-			var res = item.split('=');
-			if(res[0] == 'goods'){
-				data = JSON.parse(res[1]);
-			}else{
-				data = [];
-			}
-		})
+		if(cookie.length>0){
+			cookie = document.cookie.split('; ')
+			cookie.forEach(function(item){
+				var res = item.split('=');
+				if(res[0] == 'goods'){
+					data = JSON.parse(res[1]);
+				}
+				
+			})
+		}
+		
 
 
 		//参数
@@ -172,20 +179,30 @@ require(['config'],function(){
 
 					//绑定点击事件
 					$btn.find('#details_btn').on('click',function(){
-						
-						//数据
-						var data_res = {
-							qty:$btn.find('input').val(),
-							id:item.id,
-							total:item.total,
-							img:item.img,
-							pirce:item.pirce,
-							list:item.list,
-							rebate:item.rebate,
-							surplus:item.surplus,
-						};
 
-						data.push(data_res);
+						for(var i=0;i<data.length;i++){
+							if(data[i].id == item.id){
+								data[i].qty =  Number(data[i].qty) + Number($btn.find('input').val());
+
+								break;
+							}
+						}
+						//数据
+						if(i == data.length){
+							var data_res = {
+								qty:$btn.find('input').val(),
+								id:item.id,
+								total:item.total,
+								img:item.img,
+								pirce:item.pirce,
+								list:item.list,
+								rebate:item.rebate,
+								surplus:item.surplus,
+							};
+
+							data.push(data_res);
+						}
+						
 				
 						//写入cookie
 						document.cookie = 'goods='+JSON.stringify(data);
@@ -193,7 +210,7 @@ require(['config'],function(){
 
 
 					//放大镜
-					$('.xiaobox').Magnifier({
+					$xiaobox.Magnifier({
 						ele:'.dabox',
 						distance:20,
 					}); 

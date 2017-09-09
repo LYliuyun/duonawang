@@ -135,6 +135,13 @@ require(['config'],function(){
 					//加
 					if(target.id == 'jia'){
 						var vals = $(target).prev().val();
+						var id =  $(target).closest('tr').attr('data-id');
+						data.forEach(function(item){
+							if(item.id == id){
+								++item.qty;
+							}
+							document.cookie = 'goods='+ JSON.stringify(data);
+						});
 						 vals++;
 						 $(target).prev().val(vals);
 
@@ -152,6 +159,13 @@ require(['config'],function(){
 					//减
 					if(target.id == 'jian'){
 						var vals = $(target).next().val();
+						var id =  $(target).closest('tr').attr('data-id');
+						data.forEach(function(item){
+							if(item.id == id){
+								--item.qty;
+							}
+							document.cookie = 'goods='+ JSON.stringify(data);
+						});
 						 vals--;
 						 if(vals<1){
 						 	vals = 1;
@@ -178,40 +192,62 @@ require(['config'],function(){
 				});	
 
 				//总价
-				var totalPirce =0;
-				for(var j=0;j<$tbody.find('.checkAll').length;j++){
-			
-					if($tbody.find('.checkAll').eq(j)[0].checked){
-						$tbody.find('tr').eq(j).addClass('checkedActive');
-						totalPirce += Number($tbody.find('tr').eq(j).find('b').html());
-						$tfoot.find('b').html(totalPirce);
+				function total(){
+					var totalPirce =0;
+					for(var j=0;j<$tbody.find('.checkAll').length;j++){
+				
+						if($tbody.find('.checkAll').eq(j)[0].checked){
+							$tbody.find('tr').eq(j).addClass('checkedActive');
+							totalPirce += Number($tbody.find('tr').eq(j).find('b').html());
+							$tfoot.find('b').html(totalPirce);
+						}else{
+							$tfoot.find('b').html(totalPirce);
+						}
 					}
 				}
+				total();
 
 				//绑定点击事件
 				$tbody.on('click','.checkAll',function(){
+
+					//高亮
+					if(this.checked){
+						
+						$(this).closest('tr').addClass('checkedActive');
+					}else{
+						
+						$(this).closest('tr').removeClass('checkedActive');
+					}
+
+					//总价格
+					total();
+
+					//勾选
 					for(var i=0;i<$tbody.find('.checkAll').length;i++){
+				
 						//有一个没被勾上则全选不会勾上
 						if(!$tbody.find('.checkAll').eq(i)[0].checked){
-							$tbody.find('tr').eq(i).removeClass('checkedActive');
 							$thead.find('.all')[0].checked = false;
 
 							break;
 						}
-						$tbody.find('tr').eq(i).addClass('checkedActive');
 						$thead.find('.all')[0].checked = true;
 						$tfoot.find('.invert')[0].checked = false;
 					}
+
 				})
 
 				//checked
 				// 全选
 				$thead.on('click','.all',function(){
 					for(var i=0;i<$tbody.find('.checkAll').length;i++){
-
+						$tbody.find('tr').addClass('checkedActive');
 						$tbody.find('.checkAll').eq(i)[0].checked = this.checked;
 						
-					}
+					};
+					//总价格
+					total();
+
 				});
 
 				//反选
@@ -219,15 +255,20 @@ require(['config'],function(){
 					for(var i=0;i<$tbody.find('.checkAll').length;i++){
 						//勾上的取消
 						if($tbody.find('.checkAll').eq(i)[0].checked){
+							$tbody.find('tr').eq(i).removeClass('checkedActive');
 							$tbody.find('.checkAll').eq(i)[0].checked = false;
 						}else{
+							$tbody.find('tr').eq(i).addClass('checkedActive');
 							$tbody.find('.checkAll').eq(i)[0].checked = true;
 						}
 
-						//全选取消
-						$thead.find('.all')[0].checked = !this.checked;
+						// //全选取消
+						 $thead.find('.all')[0].checked = false;
 
-					}
+					};
+
+					//总价格
+					total();
 				});
 
 				this.data = data;

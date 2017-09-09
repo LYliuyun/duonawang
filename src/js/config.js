@@ -12,9 +12,9 @@ require.config({
 	},
 
 	 shim: {
-         
+         //依赖
          index_head: ["jquery"],
-         magnifier:["jquery","index_head"],
+         magnifier:["jquery"]
    
     }
 

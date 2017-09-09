@@ -1,5 +1,6 @@
+
 require(['config'],function(){
-	require(['jquery'],function($){
+	require(['jquery'],function(){	
 		//放大镜效果
 		$.fn.Magnifier = function(data){
 			//默认数据
@@ -134,6 +135,7 @@ require(['config'],function(){
 			//返回值，能链式调用
 			return this;
 		};
+
 	});
 
 })
